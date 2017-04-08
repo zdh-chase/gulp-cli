@@ -8,7 +8,7 @@ define(function(require, exports, module) {
         	$('p').html('111111');
         	$.ajax({
         		type:'get',
-        		url:'/LoginCtrl/login',
+        		url:'/api/login',
         		data:{
 
         		},
