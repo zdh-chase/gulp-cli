@@ -1,0 +1,16 @@
+<p>这是页脚</p><script type="text/javascript" src="/javascripts/lib/sea.js"></script><script type="text/javascript">seajs.config({
+		    paths: {
+		    	'src': '/javascripts'
+		    },
+           alias:{
+             jquery:'src/lib/jquery.js',
+             index:'src/index.js',
+             a:'src/a.js',
+             b:'src/b.js'
+           },
+           map: [
+				[ /^(.*\.(?:css|js))(.*)$/i, '$1?201703281819' ]
+			],
+		   preload: ['jquery']
+      });
+      seajs.use(["jquery","index"]);</script>
