@@ -18,25 +18,12 @@ var nodemon = require('gulp-nodemon');
 var concat = require('gulp-concat');
 var gulpCopy = require('gulp-file-copy');
 var livereload = require('gulp-livereload');
-var proxy = require('http-proxy-middleware');
 
 
 var jsFiles = {
-    "login" : {
-      src: ['src/public/javascripts/login.js'],
-      dest: "dist/public/javascripts/"
-    },
-    "manage" : {
-      src: ['src/public/javascripts/public.js','src/public/javascripts/manage.js'],
-      dest: "dist/public/javascripts/"
-    },
-    "user" : {
-      src: ['src/public/javascripts/public.js','src/public/javascripts/user.js'],
-      dest: "dist/public/javascripts/"
-    },
-    "public" : {
-      src: ['src/public/javascripts/public.js'],
-      dest: "dist/public/javascripts/"
+    "index" : {
+        src: ['src/public/javascripts/a.js','src/public/javascripts/b.js','src/public/javascripts/index.js'],
+        dest: "dist/public/javascripts/"
     }
 };
 gulp.task('mergeScripts',function () {
@@ -70,7 +57,7 @@ gulp.task('mergeScss',function (){
             // 如下将生产：backgound:url(../images/sprite20324232.png)
             'pathToSpriteSheetFromCSS': '../images/sprite/sprite-'+timestamp+'.png'
             }))
-           // .pipe(px3rem({remUnit: 75 }))//转化基值72，
+            .pipe(px3rem({remUnit: 75 }))//转化基值72，
             .pipe(minifycss())
             .pipe(rev())                                            //- 文件名加MD5后缀
             .pipe(gulp.dest('dist/public/scss/'))
@@ -142,13 +129,6 @@ gulp.task('browser-sync', ['nodemon'], function() {
     files: ["dist/views/*.*","dist/public/scss/*.*","dist/public/javascripts/*.*","dist/public/images/*.*"],
     browser: "chrome",
     port: 7000,
-    middleware: [
-      proxy('/api', {
-          target: 'http://localhost:15272',
-          changeOrigin: true,
-          ws: true
-      })
-    ]
   });
 });
 
