@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/scss/a.css' />
-  </head>
-  <body>
-    <p>这是头部html</p>
-
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			<%= title %>
+		</title>
+		<link rel='stylesheet' href='/scss/public.css' />
+		<link rel='stylesheet' href='/scss/sweetalert.css' />
+		<link rel='stylesheet' href='<%= css %>' />
+	</head>
+	<body>
+		<nav>
+			<div class="nav-left">
+				<h1>刀具管理系统</h1>
+			</div>
+			<div class="nav-right">
+				<i class="exit"></i>
+			</div>
+		</nav>

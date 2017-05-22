@@ -1,22 +1,27 @@
-  <p>这是页脚</p>
-  <script type="text/javascript" src="/javascripts/lib/sea.js"></script>
-  <script type="text/javascript">
-      seajs.config({
-		    paths: {
-		    	'src': '/javascripts'
-		    },
-           alias:{
-             jquery:'src/lib/jquery.js',
-             index:'src/index.js',
-             a:'src/a.js',
-             b:'src/b.js'
-           },
-           map: [
-				[ /^(.*\.(?:css|js))(.*)$/i, '$1?201703281819' ]
-			],
-		   preload: ['jquery']
-      });
-      seajs.use(["jquery","index"]);
-	</script>
-  </body>
+<script type="text/javascript" src="/javascripts/lib/sea.js"></script>
+<script type="text/javascript">
+	seajs.config({
+		paths: {
+			'src': '/javascripts'
+		},
+		alias: {
+			jquery: 'src/lib/jquery.js',
+			pagination: 'src/lib/pagination.js',
+			swl: 'src/lib/sweetalert.min.js',
+			echarts: 'src/lib/echarts.min.js',
+			MyDate:'src/lib/My97DatePicker/WdatePicker.js',
+			manage: 'src/manage.js',
+			user: 'src/user.js',
+			index: 'src/index.js',
+			public: 'src/public.js'
+		},
+		map: [
+			[/^(.*\.(?:css|js))(.*)$/i, '$1?201703281819']
+		],
+		preload: ['jquery']
+	});
+	seajs.use(["jquery", "swl", "MyDate","<%= js %>"]);
+</script>
+</body>
+
 </html>

@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'dist/public')));
 
 routes(app);
 
-app.use('/api', proxy({target: 'http://localhost:8080', changeOrigin: true}));
+//app.use('/api', proxy({target: 'http://localhost:15272', changeOrigin: true}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

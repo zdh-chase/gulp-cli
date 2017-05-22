@@ -1,3 +1,0 @@
-define("a",[],function(require,exports,module){var a={init:function(){},aDom:function(){console.log("来自a.js的内容--检测watch功能我修改了wwwwddaaaa111dsada0000....2505200"),$("p").html("111111"),$.ajax({type:"get",url:"/api/login",data:{},success:function(a){}})}};module.exports=a});
-define("b",[],function(require,exports,module){var n={init:function(){},bDom:function(){console.log("来自b.js的内容什么鬼了ddddsss")}};module.exports=n});
-define("index",["a","b"],function(require,exports,module){var n=require("a"),i=require("b"),o={init:function(){console.log("来自index.js的内容111"),n.aDom(),i.bDom()}};module.exports=o.init()});
