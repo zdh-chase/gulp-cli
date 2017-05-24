@@ -1,0 +1,12 @@
+body {
+  background: #ccc; }
+
+body p {
+  width: 600px;
+  height: 200px;
+  background: blue;
+  color: #fff; }
+
+.imgbox {
+  height: 65px;
+  background: url("../images/aaa.png") no-repeat; }

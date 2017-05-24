@@ -9,9 +9,16 @@ var proxy = require('http-proxy-middleware');
 
 var app = express();
 
+var dirname = 'src';
+if(process.env.NODE_ENV == 'production') {
+  dirname = 'dist';
+}
+
 // view engine setup
-app.set('views', path.join(__dirname, 'dist/views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, dirname+'/views'));
+app.set('view engine', 'html');
+//再用app.engine()方法注册模板引擎的后缀名。代码：
+app.engine('.html',require('ejs').__express);//两个下划线
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -19,7 +26,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'dist/public')));
+app.use(express.static(path.join(__dirname, dirname+'/public')));
 
 routes(app);
 

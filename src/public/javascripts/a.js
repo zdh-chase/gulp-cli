@@ -4,8 +4,8 @@ define(function(require, exports, module) {
 
         },
         aDom:function(){
-        	console.log('来自a.js的内容--检测watch功能我修改了wwwwddaaaa111dsada0000....2505200');
-        	$('p').html('111111');
+        	console.log('222来自a.js的内容--检测watch功能我修改了wwwwddaaaa111dsada0000....2505200');
+        	//$('p').html('111111');
         	$.ajax({
         		type:'get',
         		url:'/api/login',

@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "gulp build",
+    "prd": "set NODE_ENV=production&&gulp server",
+    "dev": "set NODE_ENV=development&&gulp server"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
+    "gulp-asset-rev": "^0.0.15",
     "gulp-base64": "^0.1.3",
     "gulp-concat": "^2.6.1",
     "gulp-css-spriter": "^0.4.0",
